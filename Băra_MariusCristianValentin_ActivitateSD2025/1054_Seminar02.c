@@ -65,7 +65,29 @@ void dezalocare(struct Masina** vector, int* nrElemente) {
 	}
 }
 
-void copiazaAnumiteElemente(struct Sablon* vector, char nrElemente, float prag, struct Sablon** vectorNou, int* dimensiune) {
+void copiazaAnumiteElemente(struct Masina* vector, char nrElemente, float prag, struct Masina** vectorNou, int* dimensiune) {
+	if (vector != NULL && nrElemente > 0)
+	{
+		for (int i = 0; i < nrElemente; i++)
+		{
+			if (vector[i].kilometriiParcursi > prag)
+			{
+				(*dimensiune)++;
+			}
+		}
+	}
+	(*vectorNou) = malloc(sizeof(struct Masina) * (*dimensiune));
+	int contor = 0;
+	for (int i = 0; i < nrElemente; i++)
+	{
+		if (vector[i].kilometriiParcursi > prag)
+		{
+			(*vectorNou)[contor] = initializare(vector[i].id, vector[i].anFabricatie, vector[i].sofer, vector[i].kilometriiParcursi, vector[i].initialaProducator);
+			contor++;
+		}
+	}
+
+
 	//parametrul prag poate fi modificat in functie de 
 	// tipul atributului ales pentru a indeplini o conditie
 	//este creat un nou vector cu elementele care indeplinesc acea conditie
