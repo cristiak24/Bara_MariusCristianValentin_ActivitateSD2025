@@ -85,12 +85,14 @@ void copiazaMasiniCuMultiKilometri(struct Masina* vector, char nrElemente, float
 	}
 	(*vectorNou) = malloc(sizeof(struct Masina) * (*dimensiune));
 	int contor = 0;
+
+
 	for (int i = 0; i < nrElemente; i++)
 	{
 		if (vector[i].kilometriiParcursi > prag)
 		{
 			(*vectorNou)[contor] = vector[i];
-			(*vectorNou)[contor].sofer = malloc(sizeof(char)* strlen(vector[i].sofer) +1);
+			(*vectorNou)[contor].sofer = malloc(sizeof(char) * strlen(vector[i].sofer) + 1);
 			strcpy_s((*vectorNou)[contor].sofer, strlen(vector[i].sofer) + 1, vector[i].sofer);
 			contor++;
 		}
@@ -104,12 +106,12 @@ void copiazaMasiniCuMultiKilometri(struct Masina* vector, char nrElemente, float
 
 //trebuie cautat elementul care indeplineste o conditie
 //dupa atributul de tip char*. Acesta este returnat.
-struct Masina getPrimaMasinaDupaSofer(struct Masina* vector, int nrElemente, const char* soferCautat) 
+struct Masina getPrimaMasinaDupaSofer(struct Masina* vector, int nrElemente, const char* soferCautat)
 
 {
-	for (int i = 0; i < nrElemente ; i++) 
+	for (int i = 0; i < nrElemente; i++)
 	{
-		if (strcmp(soferCautat, vector[i].sofer) == 0) 
+		if (strcmp(soferCautat, vector[i].sofer) == 0)
 		{
 			return vector[i];
 		}
