@@ -138,6 +138,7 @@
     </ClCompile>
     <ClCompile Include="1054_Seminar04.c" />
     <ClCompile Include="1054_Seminarul05.c" />
+    <ClCompile Include="1054_Seminarul06.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

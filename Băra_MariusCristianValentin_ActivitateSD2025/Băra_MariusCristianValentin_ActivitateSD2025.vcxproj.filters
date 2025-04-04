@@ -30,5 +30,8 @@
     <ClCompile Include="1054_Seminarul05.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1054_Seminarul06.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
